@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Here</title>
+</head>
+
+<body>
+    <h1>Register Here</h1>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="name">Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="name" name="name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phone">Phone No:</label>
+                </td>
+                <td>
+                    <input type="tel" id="phone" name="phone" required>
+                </td>
+            </tr>
+        </table>
+
+        <div>
+            <label>Gender:</label>
+            <label>
+                <input type="radio" id="male" name="gender" value="male"> Male
+            </label>
+            <label>
+                <input type="radio" id="female" name="gender" value="female"> Female
+            </label>
+        </div>
+
+        <div>
+            <label for="city">City:</label>
+            <select id="city" name="city" required>
+                <option value="">Select City</option>
+                <option value="kolkata">Kolkata</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="delhi">Delhi</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="address">Address:</label>
+        </div>
+        <div>
+            <textarea id="address" name="address" rows="4" required></textarea>
+        </div>
+
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</body>
+
+</html>

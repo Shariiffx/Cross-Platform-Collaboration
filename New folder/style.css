@@ -1,0 +1,13 @@
+#p1 {
+    width: 50%;
+    float: left;
+    background-color: aqua;
+    text-align: center;
+}
+
+#p2 {
+    width: 50%;
+    float: left;
+    background-color: green;
+    text-align: center;
+}

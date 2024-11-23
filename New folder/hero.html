@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+
+        #imageGallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .superhero-image {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .superhero-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #enlargedImageContainer {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #enlargedImage {
+            max-width: 100%;
+            max-height: 400px;
+            /* Adjust height as needed */
+            border: 5px solid black;
+        }
+
+        #closeButton {
+            display: none;
+            font-size: 1.5rem;
+            color: black;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+            justify-content: center;
+        }
+
+        #closeButton:hover {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imageGallery">
+        <img src="superhero1.jpg" alt="Superhero 1" class="superhero-image" data-bgcolor="#ff0000">
+        <img src="superhero2.jpg" alt="Superhero 2" class="superhero-image" data-bgcolor="#00ff00">
+        <img src="superhero3.jpg" alt="Superhero 3" class="superhero-image" data-bgcolor="#0000ff">
+        <img src="superhero4.jpg" alt="Superhero 4" class="superhero-image" data-bgcolor="#ffff00">
+        <img src="superhero5.jpg" alt="Superhero 5" class="superhero-image" data-bgcolor="#ff00ff">
+    </div>
+    <div id="enlargedImageContainer">
+        <img id="enlargedImage" src="" alt="Enlarged Superhero Image">
+    </div>
+    <button>
+        <div id="closeButton">Close</div>
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.superhero-image');
+            const enlargedImageContainer = document.getElementById('enlargedImageContainer');
+            const enlargedImage = document.getElementById('enlargedImage');
+            const closeButton = document.getElementById('closeButton');
+
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    const bgColor = image.getAttribute('data-bgcolor');
+                    document.body.style.backgroundColor = bgColor;
+                    enlargedImage.src = image.src;
+                    enlargedImageContainer.style.display = 'flex';
+                    closeButton.style.display = 'block';
+                });
+            });
+
+            closeButton.addEventListener('click', () => {
+                enlargedImageContainer.style.display = 'none';
+                document.body.style.backgroundColor = ''; // Reset background color
+                closeButton.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

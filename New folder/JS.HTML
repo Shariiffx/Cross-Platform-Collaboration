@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function findsum(event) {
+            event.preventDefault(); // Prevents the form from submitting and reloading the page
+
+            // Get values from input fields and convert to integers
+            var n1 = parseInt(document.getElementById("num1").value);
+            var n2 = parseInt(document.getElementById("num2").value);
+
+            // Calculate the sum
+            var r = n1 + n2;
+
+            // Display the result in the result input field
+            document.getElementById("result").value = r;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript</h1>
+    <form>
+        num1: <input type="text" id="num1" value=""><br>
+        num2: <input type="text" id="num2" value=""><br>
+        <button onclick="findsum(event)">Sum</button><br>
+        result: <input type="text" id="result" value="" readonly><br>
+    </form>
+</body>
+
+</html>
